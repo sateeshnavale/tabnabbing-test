@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabnabbing Test</title>
+</head>
+<body>
+    <p>This is the original page content.</p>
+    <a href="https://example.com" target="_blank" rel="noopener noreferrer">Open Example.com</a>
+  <script>
+    setTimeout(function() {
+        if (window.opener) {
+            window.opener.document.body.innerHTML = "<h1>Tabnabbing Attack Detected!</h1><p>Your content has been replaced by a malicious website.</p>";
+        }
+    }, 3000); // Change content after 3 seconds (adjust timing as needed)
+</script>
+</body>
+</html>
